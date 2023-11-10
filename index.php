@@ -8,16 +8,19 @@
 </head>
 <body>
     <?php
-        include_once("Model/Usuario.php");
+        include_once("Model/Usuarios.php");
         //$bd = new ConDB();
         //var_dump($bd->con);
-        $us = new Usuario();
+        //$us = new Usuario();
+       // $us->registrarUsuario();
         $datos=$us->queryUsers();
         
         foreach($datos as $d){?>
         <p><?php print($d['id']." ".$d['usuario']);?></p>
         <?php    
+        
         }
+        
     ?>
 </body>
 </html>

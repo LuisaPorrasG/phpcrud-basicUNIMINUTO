@@ -1,20 +1,24 @@
 <?php
 include_once("ConDB.php");
-class Usuario{
+class Usuario {
     private $_con;
     private $usuario;
     private $contrasena;
+    private $idRol;
 
     public function __construct(){
         $db = new ConDB();
         $this->_con = $db->con;
-        $this->usuario = "Sebas";
-        $this->contrasena = "678";
+        $this->usuario = "Julian";
+        $this->contrasena = "Master";
+        $this->idRold="1";
     }
 
     public function registrarUsuario(){
-        $query = "INSERT INTO usuarios VALUES(null,'$this->usuario','$this->contrasena');";
+        $query = "INSERT INTO usuarios VALUES(null,'$this->usuario','$this->contrasena','$this->idRold');";
         echo $query;
+
+        
         if(mysqli_query($this->_con, $query)){
             //mysql_close($this->_con);
             echo "Se registró";
